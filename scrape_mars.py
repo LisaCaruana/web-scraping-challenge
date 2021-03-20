@@ -138,23 +138,23 @@ def mars_facts():
     browser.back()
 
 # Store hemisphere images in a list of dictionaries
-hemisphere_image_urls=[
-    {"title": cerb_title, "img_url": cerb_photo},
-    {"title": schia_title, "img_url": schia_photo},
-    {"title": syrtis_title, "img_url": syrtis_photo},
-    {"title": valles_title, "img_url": valles_photo}
+    hemisphere_image_urls=[
+        {"title": cerb_title, "img_url": cerb_photo},
+        {"title": schia_title, "img_url": schia_photo},
+        {"title": syrtis_title, "img_url": syrtis_photo},
+        {"title": valles_title, "img_url": valles_photo}
 ]
 
 #Store table and headlines in dictionary
-mars_facts= {
-    'Headline': news_title,
-    'News': news_p,
-    'Featured Image': featured_img_url,
-    'Table': html_table_mongo,
-    'Hemisphere Images': hemisphere_image_urls
+    mars_facts= {
+        'Headline': news_title,
+        'News': news_p,
+        'Featured Image': featured_img_url,
+        'Table': html_table_mongo,
+        'Hemisphere Images': hemisphere_image_urls
     }
     return mars_facts
 
-browser.quit()
+    browser.quit()
 # Return results
         

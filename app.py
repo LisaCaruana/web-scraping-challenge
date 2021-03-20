@@ -11,7 +11,7 @@ conn = "mongodb://localhost:27017/"
 
 
 # app.config 
-mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
+mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_db")
 
 # mars = mongo.db.mars
 # mars_data = scrape_mars.scrape_all()
@@ -22,7 +22,7 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 def home():
 
     # Find one record of data from the mongo database
-    mars_facts = mongo.db.collection.find_one()
+    mars_facts = mongo.db.mars.find_one()
     
     # Return template and data
     return render_template("index.html", mars_facts=mars_facts)
@@ -31,10 +31,10 @@ def home():
 @app.route("/scrape")
 def scrape():
     # Run the scrape function
-    mars_facts = scrape_mars.scrape_info()
-
+    mars_facts = scrape_mars.scrape_all()
+    
     # Update the Mongo database using update and upsert=True
-    mongo.db.collection.update({}, mars_facts, upsert=True)
+    mongo.db.mars.update({}, mars_facts, upsert=True)
 
     #Call the scrape_mars.py and store dictionary of results to mongo
     return redirect ('/')
