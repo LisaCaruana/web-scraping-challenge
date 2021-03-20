@@ -151,7 +151,7 @@ def scrape():
         'News': news_p,
         'Featured Image': featured_img_url,
         'Table': html_table_mongo,
-        'Hemisphere Images': hemisphere_image_urls
+        'Hemisphere_Images': hemisphere_image_urls
     }
     return mars_facts
 

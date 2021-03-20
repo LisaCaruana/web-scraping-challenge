@@ -25,8 +25,22 @@
       {{mars_facts.Table | safe}}
     </table>
   </hr>
-    <h2>Mars Hemispheres</h2>
-    <
+  <div class="container text-center">
+    <h1 class="jumbotron">Hemispheres of Mars</h1>
+    <div>
+      <ul style="list-style: none;">
+
+        <!-- Loop through the dictionary -->
+        
+        {% for Hemisphere_Images in mars_facts %}
+        <li>{{Hemisphere_Images.title}}</li>
+          <!-- <li style="color:blue">{{ Hemisphere_Images.title }}</li> -->
+        <!-- <img src='{{mars_facts[Hemisphere_Images.img_url]}}'/> -->
+        {% endfor %}
+
+      </ul>
+    </div>
+  </div>
   </div>
   </div>
 </body>
