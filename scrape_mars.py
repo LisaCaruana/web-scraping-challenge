@@ -10,7 +10,7 @@ def init_browser():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     return Browser("chrome", **executable_path, headless=False)
 
-def scrape_info():
+def mars_facts():
     browser = init_browser()
 
     # Assign URL and visit with browser
@@ -137,8 +137,6 @@ def scrape_info():
     valles_title = soup_valles.find("h2", class_="title").text
     browser.back()
 
-    browser.quit()
-
 # Store hemisphere images in a list of dictionaries
 hemisphere_image_urls=[
     {"title": cerb_title, "img_url": cerb_photo},
@@ -155,6 +153,8 @@ mars_facts= {
     'Table': html_table_mongo,
     'Hemisphere Images': hemisphere_image_urls
     }
+    return mars_facts
 
+browser.quit()
 # Return results
-return mars_facts
+        
