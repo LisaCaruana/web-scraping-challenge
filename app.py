@@ -31,10 +31,10 @@ def home():
 @app.route("/scrape")
 def scrape():
     # Run the scrape function
-    mars_facts = scrape_mars.scrape_all()
+    mars_scrape = scrape_mars.scrape()
     
     # Update the Mongo database using update and upsert=True
-    mongo.db.mars.update({}, mars_facts, upsert=True)
+    mongo.db.mars.update({}, mars_scrape, upsert=True)
 
     #Call the scrape_mars.py and store dictionary of results to mongo
     return redirect ('/')

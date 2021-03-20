@@ -22,7 +22,7 @@
     <h3>Featured Mars Image</h3>
     <img src="{{mars_facts['Featured Image']}}" alt="Latest Image from Mars">
     <table class = 'table'>
-      {{mars_facts.clean_df}}
+      {{mars_facts.Table | safe}}
     </table>
   </hr>
     <h2>Mars Hemispheres</h2>

@@ -10,7 +10,7 @@ def init_browser():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     return Browser("chrome", **executable_path, headless=False)
 
-def mars_facts():
+def scrape():
     browser = init_browser()
 
     # Assign URL and visit with browser
