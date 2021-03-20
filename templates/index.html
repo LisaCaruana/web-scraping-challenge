@@ -33,7 +33,7 @@
         <!-- Loop through the dictionary -->
         
         {% for Hemisphere_Images in mars_facts %}
-        <li>{{Hemisphere_Images.title}}</li>
+        <li>  {{ Hemisphere_Images.title, Hemisphere_Images.img_url }} </li>
           <!-- <li style="color:blue">{{ Hemisphere_Images.title }}</li> -->
         <!-- <img src='{{mars_facts[Hemisphere_Images.img_url]}}'/> -->
         {% endfor %}
