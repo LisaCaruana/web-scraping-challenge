@@ -52,18 +52,18 @@ def scrape():
     browser.visit(facts_url)  
 
     # Read table on webpage using Pandas and assign to variable name
-    mars_facts=pd.read_html(facts_url)
+    mars_table=pd.read_html(facts_url)
 
     # Create dataframe using scraped data
-    facts_df = mars_facts[0]
+    facts_df = mars_table[0]
 
     # Rename columns and set 'Category' column as index
     facts_df.columns= (['Category', 'Mars Facts'])
-    mars_facts_clean=facts_df.drop(0)
-    clean_df=mars_facts_clean.set_index('Category')
+    mars_table_clean=facts_df.drop(0)
+    clean_df=mars_table_clean.set_index('Category')
 
     # Use Pandas to convert the data to a HTML table string to use in Mongo dictionary.
-    html_table_mongo = facts_df.to_html()
+    html_table_mongo = clean_df.to_html()
 
 ### Mars Hemispheres
     # Visit the USGS Astrogeology site
