@@ -149,7 +149,7 @@ def scrape():
     mars_facts= {
         'Headline': news_title,
         'News': news_p,
-        'Featured Image': featured_img_url,
+        'Featured_Image': featured_img_url,
         'Table': html_table_mongo,
         'Hemisphere_Images': hemisphere_image_urls
     }

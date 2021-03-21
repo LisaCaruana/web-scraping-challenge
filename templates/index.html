@@ -13,48 +13,56 @@
   <div class="container-fluid">
     <div class="jumbotron text-center">
       <h1>Explore Mars</h1>
-      <p>Check out some new images and facts about Mars</p>
+      <p>Scrape latest Mars images and news</p>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Mars News</a></p>
     </div>
+  <div class = "container text-center">
     <h2>Latest Mars News</h2>
-    <h4>{{ mars_facts.Headline }}</h4>
+    <h3>{{ mars_facts.Headline }}</h3>
     <p>{{mars_facts.News}}</p>
-    <h3>Featured Mars Image</h3>
-    <img src="{{mars_facts['Featured Image']}}" alt="Latest Image from Mars">
-    <table class = 'table'>
-      {{mars_facts.Table | safe}}
-    </table>
+  </div>
+  <div class = "container">
+    <div class = "row">
+      <div class = 'col-md-6'>
+        <h3>Featured Mars Image</h3>
+        <img src="{{mars_facts['Featured_Image']}}" class= 'img-responsive' style= 'max-width:100%; height:auto;' alt="Latest Image from Mars">
+      </div>
+    <div class = "row">
+      <div class = 'col-md-6'>
+        <h3>Interesting Facts about Mars</h3>
+        <table class = 'table' >
+          {{mars_facts.Table | safe}}
+        </table>
+      </div>
     </div>
   </div>
-  </hr>
+<hr>
   <div class="container text-center">
     <h1 class="jumbotron">Hemispheres of Mars</h1>
-    <div>
-      <!-- <ul style="list-style: none;"> -->
-
-        <!-- Loop through the dictionary -->
-        
-        <!-- {% for Hemisphere_Images in mars_facts %} -->
+  </div>
+  <div class="gallery">
+    <div class = 'col-md-6' style="padding: 25px;">
         <h3>{{ mars_facts.Hemisphere_Images[0].title }}</h3>
-        <img src="{{ mars_facts.Hemisphere_Images[0].img_url}}">
-      </hr>
+        <img src="{{ mars_facts.Hemisphere_Images[0].img_url}}" class= 'img-responsive' style= 'max-width:75%; height:auto;' alt="Cerberus_Hemisphere">
+    </div>
+    <div class = 'col-md-6' style="padding: 25px;">
         <h3>{{ mars_facts.Hemisphere_Images[1].title }}</h3>
-        <img src="{{ mars_facts.Hemisphere_Images[1].img_url}}">
-      </hr>
-      <h3>{{ mars_facts.Hemisphere_Images[2].title }}</h3>
-      <img src="{{ mars_facts.Hemisphere_Images[2].img_url}}">
-    </hr>
-    <h3>{{ mars_facts.Hemisphere_Images[3].title }}</h3>
-    <img src="{{ mars_facts.Hemisphere_Images[3].img_url}}">
-        <!-- <img src="{{mars_facts.Hemisphere_Images[0].img_url}}"> -->
-        <!-- <li> {{ Hemisphere_Images.title }} {{ Hemisphere_Images.img_url }} </li> -->
-          <!-- <li style="color:blue">{{ Hemisphere_Images.title }}</li> -->
-        <!-- <img src='{{mars_facts[Hemisphere_Images.img_url]}}'/> -->
-        <!-- {% endfor %} -->
+        <img src="{{ mars_facts.Hemisphere_Images[1].img_url}}" class= 'img-responsive' style= 'max-width:75%; height:auto;' alt="Schiaparelli_Hemisphere">
+    </div>
 
-      <!-- </ul> -->
+<hr>
+<div class="container-fluid">
+  <div class="gallery">
+    <div class = 'col-md-6' style="padding: 25px;" >
+        <h3>{{ mars_facts.Hemisphere_Images[2].title }}</h3>
+        <img src="{{ mars_facts.Hemisphere_Images[2].img_url}}" class= 'img-responsive' style= 'max-width:75%; height:auto;' alt="Syrtis_Hemisphere">
+    </div>
+    <div class = 'col-md-6' style="padding: 25px;">
+        <h3>{{ mars_facts.Hemisphere_Images[3].title }}</h3>
+        <img src="{{ mars_facts.Hemisphere_Images[3].img_url}}" class= 'img-responsive' style='max-width:75%; height:auto;'  alt="Valles_Hemisphere"> 
     </div>
   </div>
+</div>
 </body>
 
 </html>
